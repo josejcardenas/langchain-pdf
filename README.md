@@ -1,3 +1,18 @@
+
+# Information taken following the coures
+## Description
+Here is the follow me solution for the course from udemy https://www.udemy.com/course/chatgpt-and-langchain-the-complete-developers-masterclass/learn/lecture/40275878#questions
+Section 7 and up.
+
+## Goal
+Follow the langchain inclusion for a solution mixing javascript and python
+
+## Resources
+First the starting code here is taken from cestion 68 on section 7 Boilerplate download. Some notes below:
+To create the environment I use conda and configure all packages config on environemnt.yml file.  Usually the openai and langchain tools install better using pip
+
+
+# Previous info on readme
 # First Time Setup
 
 ## Using Pipenv [Recommended]
