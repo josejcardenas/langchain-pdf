@@ -29,3 +29,4 @@ dependencies:
       - Flask==2.3.1
       - flask_sqlalchemy==3.0.3
       - flask_cors==4.0.0
+      - langchain-community==0.0.32
