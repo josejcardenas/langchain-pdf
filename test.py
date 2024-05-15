@@ -11,7 +11,7 @@ load_dotenv()
 class StreamingHandler(BaseCallbackHandler):
   def __init__(self, queue):
     self.queue = queue
-    
+
   def on_llm_new_token(self, token: str, **kwargs):
     self.queue.put(token)
   
@@ -28,7 +28,7 @@ prompt = ChatPromptTemplate.from_messages([
   ("human", "{content}")
 ])
 
-class StreamingChain(LLMChain):
+class StreamableChain:
   def stream(self, input):
     queue = Queue()
     handler = StreamingHandler(queue)
@@ -46,6 +46,9 @@ class StreamingChain(LLMChain):
     # self(input)
     # yield 'hi'
     # yield 'there'
+
+class StreamingChain(StreamableChain, LLMChain):
+  pass
 
 chain = StreamingChain(llm=chat, prompt=prompt)
 for output in chain.stream(input={"content":"tell me a joke"}):
